@@ -1,46 +1,54 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-<main class="container">
-    <div class="hero-section">
-        <h1>DevSecOps Secure CI/CD Pipeline</h1>
-        <p class="lead">Integrating security best practices into DevOps workflows</p>
-        
-        <div class="team-section">
-            <h2>Team Members</h2>
+<main>
+    <section class="hero-section">
+        <div class="container">
+            <h1>DevSecOps Secure CI/CD Pipeline</h1>
+            <p class="lead">Integrating security best practices into DevOps workflows</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Our Team</h2>
             <div class="team-cards">
                 <div class="team-card">
-                    <h3>moaad</h3>
+                    <i class="fas fa-shield-alt fa-3x"></i>
+                    <h3>Moaad</h3>
                     <p>Cybersecurity Lead</p>
                 </div>
                 <div class="team-card">
+                    <i class="fas fa-code-branch fa-3x"></i>
                     <h3>YOUSSEF</h3>
                     <p>DevOps Lead</p>
                 </div>
             </div>
         </div>
-        
-        <div class="features-section">
+    </section>
+
+    <section class="features-section">
+        <div class="container">
             <h2>Key Features</h2>
             <div class="feature-grid">
                 <div class="feature-card">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Security First</h3>
-                    <p>Integrated security scanning and testing</p>
+                    <p>Advanced security scanning and continuous monitoring integrated into every step of the development lifecycle.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-sync-alt"></i>
                     <h3>CI/CD Pipeline</h3>
-                    <p>Automated build, test, and deployment</p>
+                    <p>Automated build, test, and deployment processes with security checks at every stage.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-code-branch"></i>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Best Practices</h3>
-                    <p>Following DevSecOps principles</p>
+                    <p>Implementation of industry-standard DevSecOps practices and security protocols.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 
 <%- include('partials/footer') %>

@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+<main class="container">
+    <div class="dashboard-section">
+        <h1>DevSecOps Pipeline Status</h1>
+        
+        <div class="features-grid">
+            <% features.forEach(function(feature) { %>
+                <div class="feature-card">
+                    <h3><%= feature.name %></h3>
+                    <span class="status <%= feature.status.toLowerCase() %>">
+                        <%= feature.status %>
+                    </span>
+                </div>
+            <% }); %>
+        </div>
+
+        <div class="security-metrics">
+            <h2>Security Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Security Headers</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>
