@@ -1,34 +1,132 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 
-<main class="container">
-    <div class="dashboard-section">
-        <h1>DevSecOps Pipeline Status</h1>
-        
-        <div class="features-grid">
-            <% features.forEach(function(feature) { %>
-                <div class="feature-card">
-                    <h3><%= feature.name %></h3>
-                    <span class="status <%= feature.status.toLowerCase() %>">
-                        <%= feature.status %>
-                    </span>
-                </div>
-            <% }); %>
-        </div>
+<main class="dashboard-main">
+    <div class="container">
+        <section class="dashboard-header">
+            <h1>Project Dashboard</h1>
+            <div class="dashboard-meta">
+                <p class="timestamp"><i class="fas fa-clock"></i> UTC: <%= new Date().toISOString().slice(0, 19).replace('T', ' ') %></p>
+                <p class="user"><i class="fas fa-user"></i> <%= user || 'Youss2f' %></p>
+            </div>
+        </section>
 
-        <div class="security-metrics">
-            <h2>Security Metrics</h2>
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <h3>Security Headers</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 100%"></div>
+        <section class="project-phases">
+            <h2>Implementation Phases</h2>
+            <div class="phase-timeline">
+                <div class="phase-card active">
+                    <div class="phase-status">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <span>100%</span>
+                    <h3>Phase 1: Project Setup</h3>
+                    <p>Initial setup and basic infrastructure</p>
+                    <div class="phase-details">
+                        <span class="tag complete">Complete</span>
+                        <ul>
+                            <li>✓ Repository creation</li>
+                            <li>✓ Basic web application</li>
+                            <li>✓ Project structure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase-card in-progress">
+                    <div class="phase-status">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <h3>Phase 2: DevOps Integration</h3>
+                    <p>Setting up CI/CD pipeline</p>
+                    <div class="phase-details">
+                        <span class="tag in-progress">In Progress</span>
+                        <ul>
+                            <li>⟳ GitHub Actions setup</li>
+                            <li>⟳ Automated testing</li>
+                            <li>◯ Deployment automation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-status">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Phase 3: Security Implementation</h3>
+                    <p>Security tools and practices</p>
+                    <div class="phase-details">
+                        <span class="tag pending">Pending</span>
+                        <ul>
+                            <li>◯ SonarCloud integration</li>
+                            <li>◯ Snyk security scanning</li>
+                            <li>◯ SAST & DAST setup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-status">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Phase 4: Monitoring & Logging</h3>
+                    <p>Observability implementation</p>
+                    <div class="phase-details">
+                        <span class="tag planned">Planned</span>
+                        <ul>
+                            <li>◯ Logging system</li>
+                            <li>◯ Monitoring setup</li>
+                            <li>◯ Alert configuration</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="methodology-section">
+            <h2>Agile Implementation</h2>
+            <div class="methodology-grid">
+                <div class="methodology-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Current Sprint</h3>
+                    <div class="sprint-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span>Sprint 1 - 65% Complete</span>
+                    </div>
+                    <div class="sprint-stats">
+                        <div class="stat">
+                            <span class="stat-label">Tasks</span>
+                            <span class="stat-value">12/20</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Days Left</span>
+                            <span class="stat-value">5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Velocity</h3>
+                    <div class="velocity-chart">
+                        <canvas id="velocityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </main>
 
 <%- include('partials/footer') %>
+<section class="dashboard-header">
+    <h1>Project Dashboard</h1>
+    <div class="dashboard-meta">
+        <p class="timestamp">
+            <i class="fas fa-clock"></i> 
+            <span id="utcTime">UTC: <%= new Date().toISOString().slice(0, 19).replace('T', ' ') %></span>
+        </p>
+        <p class="user">
+            <i class="fas fa-user"></i> 
+            <span id="currentUser">Youss2f</span>
+        </p>
+    </div>
+</section>

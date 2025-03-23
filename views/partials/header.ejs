@@ -6,6 +6,12 @@
     <title><%= typeof title !== 'undefined' ? title : 'DevSecOps Showcase' %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <script>
+        // Global variables
+        window.currentUser = 'Youss2f';
+        window.currentUTC = '<%= new Date().toISOString().slice(0, 19).replace("T", " ") %>';
+    </script>
